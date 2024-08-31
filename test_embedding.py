@@ -1,7 +1,9 @@
 import unittest
-import joblib
+import pickle
 
-sbert_model = joblib.load('sbert_model.pkl')
+# Charger le modèle SBERT avec pickle
+with open('sbert_model.pkl', 'rb') as file:
+    sbert_model = pickle.load(file)
 
 
 class TestEmbeddingFunction(unittest.TestCase):
